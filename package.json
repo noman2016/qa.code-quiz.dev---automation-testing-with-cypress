@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "test": "cypress run",
+    "generate-mochawesome-report": "npx mochawesome-merge cypress/reports/html/*.json > cypress/reports/html/mochawesome.json && npx marge cypress/reports/html/mochawesome.json -f report -o cypress/reports/html"
+  },
+  "dependencies": {
+    "cypress": "^14.3.3",
+    "mochawesome-report": "^1.0.0-alpha.1"
+  },
+  "devDependencies": {
+    "cypress-mochawesome-reporter": "^3.8.2",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^5.0.0",
+    "mochawesome-report-generator": "^6.2.0"
+  }
+}
