@@ -15,7 +15,8 @@ describe('Login Page Test Suite', () => {
     cy.wait(500)
     login.clickLogin()
     cy.wait(500)
-    login.assertRedirectToDashboard() 
+    login.assertRedirectToDashboard()
+    cy.wait(500)
   }) 
 
   it('TC02 - Login with invalid username', () => {
@@ -25,7 +26,8 @@ describe('Login Page Test Suite', () => {
     cy.wait(500)
     login.clickLogin()
     cy.wait(500)
-    login.assertErrorMessage() 
+    login.assertErrorMessage()
+    cy.wait(500)
   }) 
 
   it('TC03 - Login with invalid password', () => {
@@ -35,7 +37,8 @@ describe('Login Page Test Suite', () => {
     cy.wait(500)
     login.clickLogin()
     cy.wait(500)
-    login.assertErrorMessage() 
+    login.assertErrorMessage()
+    cy.wait(500)
   }) 
 
   it('TC04 - Login with empty username', () => {
@@ -43,7 +46,8 @@ describe('Login Page Test Suite', () => {
     cy.wait(500)
     login.clickLogin()
     cy.wait(500)
-    login.assertFieldValidation('Username is required') 
+    login.assertFieldValidation('Username is required')
+    cy.wait(500)
   }) 
 
   it('TC05 - Login with empty password', () => {
@@ -51,11 +55,13 @@ describe('Login Page Test Suite', () => {
     cy.wait(500)
     login.clickLogin()
     cy.wait(500)
-    login.assertFieldValidation('Password is required') 
+    login.assertFieldValidation('Password is required')
+    cy.wait(500) 
   }) 
 
   it('TC06 - Password input should be masked', () => {
-    login.assertPasswordMasked() 
+    login.assertPasswordMasked()
+    cy.wait(500)
   }) 
 
   it('TC07 - SQL Injection attempt in username', () => {
@@ -65,7 +71,8 @@ describe('Login Page Test Suite', () => {
     cy.wait(500) 
     login.clickLogin()
     cy.wait(500)
-    login.assertErrorMessage() 
+    login.assertErrorMessage()
+    cy.wait(500)
   }) 
 
   it('TC08 - XSS script input in username', () => {
@@ -75,12 +82,14 @@ describe('Login Page Test Suite', () => {
     cy.wait(500)
     login.clickLogin()
     cy.wait(500)
-    login.assertErrorMessage() 
+    login.assertErrorMessage()
+    cy.wait(500)
   }) 
 
   it('TC09 - Login button disabled when fields are empty', () => {
     login.getLoginButton()
-    .should('be.disabled') 
+    .should('be.disabled')
+    cy.wait(500)
   }) 
 
   it('TC10 - Case sensitivity check (wrong case password)', () => {
@@ -90,6 +99,7 @@ describe('Login Page Test Suite', () => {
     cy.wait(500)
     login.clickLogin()
     cy.wait(500) 
-    login.assertErrorMessage() 
+    login.assertErrorMessage()
+    cy.wait(500)
   }) 
 }) 
